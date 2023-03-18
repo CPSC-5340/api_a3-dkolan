@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42133D6329C5674B00A1B9B0 /* FilterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42133D6229C5674B00A1B9B0 /* FilterRowView.swift */; };
 		4242CACF29C1221800A78C4E /* VillagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4242CACE29C1221800A78C4E /* VillagerModel.swift */; };
 		4242CAD229C148BF00A78C4E /* VillagerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4242CAD129C148BF00A78C4E /* VillagerDetail.swift */; };
 		4242CAD429C14C7D00A78C4E /* ImageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4242CAD329C14C7D00A78C4E /* ImageCardView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42133D6229C5674B00A1B9B0 /* FilterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRowView.swift; sourceTree = "<group>"; };
 		4242CACE29C1221800A78C4E /* VillagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerModel.swift; sourceTree = "<group>"; };
 		4242CAD129C148BF00A78C4E /* VillagerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetail.swift; sourceTree = "<group>"; };
 		4242CAD329C14C7D00A78C4E /* ImageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCardView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				4242CAD129C148BF00A78C4E /* VillagerDetail.swift */,
 				4242CAD329C14C7D00A78C4E /* ImageCardView.swift */,
 				4285CC6C29C2E317008E7631 /* VillagersListView.swift */,
+				42133D6229C5674B00A1B9B0 /* FilterRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				4242CAD429C14C7D00A78C4E /* ImageCardView.swift in Sources */,
 				ACF5E04229BE957F00DD981A /* AnimalCrossingVillagers.swift in Sources */,
 				ACF5E04029BE957F00DD981A /* Assignment3App.swift in Sources */,
+				42133D6329C5674B00A1B9B0 /* FilterRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

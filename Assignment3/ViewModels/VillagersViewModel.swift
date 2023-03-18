@@ -9,6 +9,9 @@ import Foundation
 
 class VillagersViewModel : ObservableObject {
     @Published private(set) var villagersData = [VillagerModel]()
+    @Published var filteredVillagersBySpecies: [VillagerModel] = []
+    @Published var searchText: String = ""
+    @Published var selectedFilter: String = ""
     @Published var hasError = false
     @Published var error : VillagerModelError?
     private let url = "https://acnhapi.com/v1a/villagers/"
@@ -30,6 +33,30 @@ class VillagersViewModel : ObservableObject {
             }
         }
 
+    }
+
+    var searchResults: [VillagerModel] {
+        var res: [VillagerModel]
+        if searchText.isEmpty {
+            res = villagersData
+        } else {
+            res = villagersData.filter { $0.name.nameUsEn.contains(searchText) }
+        }
+
+        if !selectedFilter.isEmpty {
+            res = res.filter { $0.species == selectedFilter }
+        }
+
+        return res
+    }
+
+    func filterSpecies(by: VillagerSpecies) {
+        selectedFilter = by.rawValue
+    }
+
+    enum VillagerSpecies: String, CaseIterable, Identifiable {
+        var id: String { self.rawValue }
+        case Alligator, Anteater, Bear, Bird, Bull, Cat, Chicken, Cow, Cub, Deer, Dog, Duck, Eagle, Elephant, Frog, Goat, Gorilla, Hamster, Hippo, Horse, Kangaroo, Koala, Lion, Monkey, Mouse, Octopus, Ostrich, Penguin, Pig, Rabbit, Rhino, Sheep, Squirrel, Tiger, Wolf
     }
 }
 
