@@ -19,7 +19,11 @@ struct FilterRowView<T>: View
                 ForEach(T.allCases) { filter in
                     Button(action: {
                         withAnimation(Animation.spring().speed(1.5)) {
-                            selectedFilter = filter
+                            if let currentFilter = selectedFilter, currentFilter == filter {
+                                selectedFilter = nil
+                            } else {
+                                selectedFilter = filter
+                            }
                         }
                         if let filterValue = selectedFilter {
                             block(filterValue)

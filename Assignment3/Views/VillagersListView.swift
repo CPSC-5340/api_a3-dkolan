@@ -13,7 +13,11 @@ struct VillagersListView: View {
     var body: some View {
         VStack {
             FilterRowView<VillagersViewModel.VillagerSpecies>(block: { species in
-                villagersVM.filterSpecies(by: species)
+                if villagersVM.selectedFilter == species.rawValue {
+                    villagersVM.filterSpecies(by: nil)
+                } else {
+                    villagersVM.filterSpecies(by: species)
+                }
             })
             List {
                 ForEach(villagersVM.searchResults) { villager in

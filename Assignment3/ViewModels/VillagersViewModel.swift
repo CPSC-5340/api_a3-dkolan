@@ -9,7 +9,6 @@ import Foundation
 
 class VillagersViewModel : ObservableObject {
     @Published private(set) var villagersData = [VillagerModel]()
-    @Published var filteredVillagersBySpecies: [VillagerModel] = []
     @Published var searchText: String = ""
     @Published var selectedFilter: String = ""
     @Published var hasError = false
@@ -50,8 +49,12 @@ class VillagersViewModel : ObservableObject {
         return res
     }
 
-    func filterSpecies(by: VillagerSpecies) {
-        selectedFilter = by.rawValue
+    func filterSpecies(by: VillagerSpecies?) {
+        if let species = by {
+            selectedFilter = species.rawValue
+        } else {
+            selectedFilter = ""
+        }
     }
 
     enum VillagerSpecies: String, CaseIterable, Identifiable {
